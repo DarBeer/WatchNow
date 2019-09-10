@@ -3,10 +3,26 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { WebComponent } from './web/web.component';
+import { HeaderComponent } from './web/header/header.component';
+import { FooterComponent } from './web/footer/footer.component';
+import { NavigateComponent } from './web/header/navigate/navigate.component';
+import { SearchComponent } from './web/header/search/search.component';
+import { HomeComponent } from './web/home/home.component';
+import { MoviesComponent } from './web/movies/movies.component';
+import { FilmComponent } from './web/Movies/film/film.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    WebComponent,
+    HeaderComponent,
+    FooterComponent,
+    NavigateComponent,
+    SearchComponent,
+    HomeComponent,
+    MoviesComponent,
+    FilmComponent
   ],
   imports: [
     BrowserModule,
