@@ -1,0 +1,20 @@
+<div class="col-12">
+    <table class="table table-hover">
+        <thead>
+            <th>id</th>
+            <th>title</th>
+            <th>preview</th>
+            <th>description</th>
+            <th>cover</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let film of list">
+                <td>{{film.id}}</td>
+                <td>{{film.title}}</td>
+                <td></td>
+                <td>{{film.description}}</td>
+                <td>{{film.cover}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
