@@ -6,13 +6,13 @@ import { AngularFirestore } from '@angular/fire/firestore';
   providedIn: 'root'
 })
 export class FilmService {
-
-  film: Film;
-  films: Film;
-
-  constructor(private firestore: AngularFirestore) { }
-
-  getFilms() {
-    return this.firestore.collection('films').snapshotChanges();
+ 
+  constructor(
+    private firestore: AngularFirestore
+  ) {
   }
+ 
+  ngOnInit() {
+  }
+ 
 }

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Film } from '../../shared/film.model'
 import { FilmService } from 'src/app/shared/film.service';
+import { Observable } from 'rxjs';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { PaginationService } from 'src/app/shared/pagination.service';
 
 @Component({
   selector: 'app-move-list',
@@ -10,19 +12,11 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class MoveListComponent implements OnInit {
 
-  list: Film[];
-
-  constructor(private service: FilmService) { }
+  constructor(private service: FilmService) { 
+    
+  }
 
   ngOnInit() {
-    this.service.getFilms().subscribe(actionArray => {
-      this.list = actionArray.map(item => {
-        return {
-          id: item.payload.doc.id,
-          ...item.payload.doc.data()
-        } as Film;
-      })
-    });
   }
 
 }

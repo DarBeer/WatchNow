@@ -20,6 +20,8 @@ import { CarouselComponent } from './modules/carousel/carousel.component';
 import { VideoPlayerComponent } from './modules/video-player/video-player.component';
 import { MoveListComponent } from './modules/move-list/move-list.component';
 import { FilmService } from './shared/film.service';
+import { ScrollableDirective } from './modules/scrollable.directive';
+import { LoadingSpinnerComponent } from './modules/loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { FilmService } from './shared/film.service';
     FilmComponent,
     CarouselComponent,
     VideoPlayerComponent,
-    MoveListComponent
+    MoveListComponent,
+    ScrollableDirective,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,
