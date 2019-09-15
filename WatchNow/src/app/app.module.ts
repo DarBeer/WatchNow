@@ -22,6 +22,7 @@ import { MoveListComponent } from './modules/move-list/move-list.component';
 import { FilmService } from './shared/film.service';
 import { ScrollableDirective } from './modules/scrollable.directive';
 import { LoadingSpinnerComponent } from './modules/loading-spinner/loading-spinner.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,9 @@ import { LoadingSpinnerComponent } from './modules/loading-spinner/loading-spinn
     BrowserAnimationsModule,
     MatVideoModule,
   ],
-  providers: [FilmService],
+  providers: [
+    FilmService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

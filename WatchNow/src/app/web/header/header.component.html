@@ -1,42 +1,11 @@
-<div class="area"></div>
-<nav class="main-menu">
-    <ul>
-        <li>
-            <i class="fa fa-bars fa-2x"></i>
-            <span class="nav-logo">Watch Now</span>
-        </li>
-        <li>
-            <a routerLink="/home" routerLinkActive="active">
-                <i class="fa fa-home fa-2x"></i>
-                <span class="nav-text">
-                    Home
-                </span>
-            </a>
-        
-        </li>
-        <li class="dropdown">
-            <a class="dropbtn" routerLink="/movies" routerLinkActive="active">
-                <i class="fa fa-film fa-2x"></i>
-                <span class="nav-text">
-                    Movies
-                </span>
-                <div class="dropdown-content">
-                    <a href="#"><span>Link 1</span></a>
-                    <a href="#"><span>Link 1</span></a>
-                    <a href="#"><span>Link 1</span></a>
-                </div>
-            </a>
-        </li>
+<header class="header">
+    <a routerLink="home" class="logo">Watch Now</a>
+    <input class="menu-btn" type="checkbox" id="menu-btn" />
+    <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+    <ul class="menu">
+        <li><a routerLink="home" routerLinkActive="navigate-active">Our Work</a></li>
+        <li><a routerLink="movies" routerLinkActive="navigate-active">About</a></li>
+        <li><a >Careers</a></li>
+        <li><a >Contact</a></li>
     </ul>
-
-    <ul class="logout">
-        <li>
-        <a>
-                <i class="fa fa-power-off fa-2x"></i>
-                <span class="nav-text">
-                    Logout
-                </span>
-            </a>
-        </li>  
-    </ul>
-</nav>
+</header>
