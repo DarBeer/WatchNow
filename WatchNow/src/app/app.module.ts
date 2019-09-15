@@ -5,6 +5,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatVideoModule } from 'mat-video';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,12 +23,12 @@ import { MoveListComponent } from './modules/move-list/move-list.component';
 import { FilmService } from './shared/film.service';
 import { ScrollableDirective } from './modules/scrollable.directive';
 import { LoadingSpinnerComponent } from './modules/loading-spinner/loading-spinner.component';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { LogInComponent } from './modules/authentication/log-in/log-in.component';
 import { UserDashBoardComponent } from './user-dash-board/user-dash-board.component';
 import { AuthenticationComponent } from './user-dash-board/authentication/authentication.component';
 import { SignUpComponent } from './modules/authentication/sign-up/sign-up.component';
+import { DashBoardComponent } from './user-dash-board/dash-board/dash-board.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { SignUpComponent } from './modules/authentication/sign-up/sign-up.compon
     LogInComponent,
     UserDashBoardComponent,
     AuthenticationComponent,
-    SignUpComponent
+    SignUpComponent,
+    DashBoardComponent
   ],
   imports: [
     FormsModule,
@@ -58,9 +60,10 @@ import { SignUpComponent } from './modules/authentication/sign-up/sign-up.compon
     AngularFirestoreModule,
     BrowserAnimationsModule,
     MatVideoModule,
+    HttpClientModule
   ],
   providers: [
-    FilmService
+    FilmService,
   ],
   bootstrap: [AppComponent]
 })
