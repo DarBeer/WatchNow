@@ -52,7 +52,7 @@ export class MoveListComponent implements OnInit {
   loadItems() {
     this.firestore.collection('films', ref => ref
       .limit(8)
-      .orderBy('id')
+      .orderBy('id', 'desc')
     ).snapshotChanges()
       .subscribe(response => {
         if (!response.length) {
@@ -66,6 +66,8 @@ export class MoveListComponent implements OnInit {
         for (let item of response) {
           this.tableData.push(item.payload.doc.data());
         }
+
+        console.log(this.tableData);
  
         //Initialize values
         this.prev_strt_at = [];
@@ -83,7 +85,7 @@ export class MoveListComponent implements OnInit {
   prevPage() {
     this.disable_prev = true;
     this.firestore.collection('films', ref => ref
-      .orderBy('id')
+      .orderBy('id', 'desc')
       .startAt(this.get_prev_startAt())
       .endBefore(this.firstInResponse)
       .limit(8)
@@ -115,7 +117,7 @@ export class MoveListComponent implements OnInit {
     this.disable_next = true;
     this.firestore.collection('films', ref => ref
       .limit(8)
-      .orderBy('id')
+      .orderBy('id', 'desc')
       .startAfter(this.lastInResponse)
     ).get()
       .subscribe(response => {

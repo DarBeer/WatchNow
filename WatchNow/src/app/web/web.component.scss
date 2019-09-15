@@ -1,7 +1,10 @@
 main {
-    margin-top: 68px;
+    padding-top: 68px;
+    min-height: 100vh;
+    padding-bottom: 53px;
 }
 
 footer {
+    margin-top: -53px;
     background-color: #1a1a1a;
 }
