@@ -6,6 +6,7 @@ import { UserDashBoardComponent } from './user-dash-board/user-dash-board.compon
 import { AuthenticationComponent } from './user-dash-board/authentication/authentication.component';
 import { LogInComponent } from './modules/authentication/log-in/log-in.component';
 import { SignUpComponent } from './modules/authentication/sign-up/sign-up.component';
+import { DashBoardComponent } from './user-dash-board/dash-board/dash-board.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'movies', component: MoviesComponent },
   { path: 'profile', component: UserDashBoardComponent, children: [
+    { path: '', component: DashBoardComponent },
     { path: 'authentication', component: AuthenticationComponent, children: [
       { path: 'sign-in', component: LogInComponent },
       { path: 'sign-up', component: SignUpComponent }
