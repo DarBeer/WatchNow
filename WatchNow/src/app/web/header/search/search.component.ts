@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import {Subject, Observable} from 'rxjs';
+import { AngularFirestore } from '@angular/fire/firestore';
+
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -7,9 +10,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
+  ngOnInit(){
   }
-
 }

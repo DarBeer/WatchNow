@@ -23,6 +23,11 @@ import { FilmService } from './shared/film.service';
 import { ScrollableDirective } from './modules/scrollable.directive';
 import { LoadingSpinnerComponent } from './modules/loading-spinner/loading-spinner.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { LogInComponent } from './modules/authentication/log-in/log-in.component';
+import { UserDashBoardComponent } from './user-dash-board/user-dash-board.component';
+import { AuthenticationComponent } from './user-dash-board/authentication/authentication.component';
+import { SignUpComponent } from './modules/authentication/sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -38,9 +43,14 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     VideoPlayerComponent,
     MoveListComponent,
     ScrollableDirective,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
+    LogInComponent,
+    UserDashBoardComponent,
+    AuthenticationComponent,
+    SignUpComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     MDBBootstrapModule.forRoot(),

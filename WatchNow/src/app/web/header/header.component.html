@@ -3,9 +3,14 @@
     <input class="menu-btn" type="checkbox" id="menu-btn" />
     <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
     <ul class="menu">
-        <li><a routerLink="home" routerLinkActive="navigate-active">Our Work</a></li>
-        <li><a routerLink="movies" routerLinkActive="navigate-active">About</a></li>
+        <!-- <li class="search-li">
+            <a>
+                <app-search></app-search>
+            </a>
+        </li> -->
+        <li><a routerLink="home" routerLinkActive="navigate-active">Home</a></li>
+        <li><a routerLink="movies" routerLinkActive="navigate-active">Movies</a></li>
         <li><a >Careers</a></li>
-        <li><a >Contact</a></li>
+        <li><a routerLink="profile/authentication/sign-in">Sig In</a></li>
     </ul>
 </header>

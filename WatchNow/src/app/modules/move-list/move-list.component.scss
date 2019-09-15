@@ -1,5 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Code:700&display=swap');
+
+.row {
+    padding-top: 15px;
+}
+
 .card {
     background-color: #1a1a1a;
+    border-style: none;
+    
+}
+
+.card-body {
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+h5 {
+    margin: 10px;
+    font-family: 'Fira Code', monospace;
 }
 
 .box {
@@ -19,7 +37,20 @@
     object-fit:cover;
 }
 
+@media (min-width: 1200px) {
+    .card {
+        width: 100% !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .card {
+        width: 300px;
+    }
+}
+
 @media (min-width: 48em) {
+
     .box {
         position: relative;
         overflow:hidden;

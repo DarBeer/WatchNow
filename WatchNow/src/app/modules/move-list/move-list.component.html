@@ -7,13 +7,16 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-md-3 col-sm-12" *ngFor="let item of tableData">
+    <div class="col-lg-4 col-xl-3 col-md-6 col-sm-12" *ngFor="let item of tableData">
             <div class="card mb-3">
-                <div class="box">
+                <div class="box view overlay">
                     <img src="{{item.cover}}" class="thumbnail" alt="Loading...">
+                    <div class="mask flex-center rgba-black-strong">
+                        <h5 class="white-text text-center">{{item.title}}</h5>
+                    </div>
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title">{{item.title}}</h5>
+                    
                 </div>
             </div>
     </div>
