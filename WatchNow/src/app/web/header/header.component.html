@@ -8,9 +8,7 @@
                 <app-search></app-search>
             </a>
         </li> -->
-        <li><a routerLink="home" routerLinkActive="navigate-active">Home</a></li>
-        <li><a routerLink="movies" routerLinkActive="navigate-active">Movies</a></li>
-        <li><a >Careers</a></li>
-        <li><a routerLink="profile/authentication/sign-in">Sign In</a></li>
+        <li *ngFor="let page of pages"><a routerLink="{{page[1]}}" routerLinkActive="navigate-active">{{page[0]}}</a></li>
+        
     </ul>
 </header>

@@ -4,6 +4,8 @@
   font-weight: normal;
   font-style: normal;
 }
+
+@import url('https://fonts.googleapis.com/css?family=Oswald:700&display=swap&subset=cyrillic');
   
   a {
     color: #cdcdcd !important;
@@ -21,13 +23,16 @@
   }
   
   .header ul {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.1rem; 
     margin: 0;
     padding: 0;
     list-style: none;
     overflow: hidden;
     background-color: #1a1a1a;
   }
-  
   .header li a {
     display: block;
     padding: 20px 20px;
@@ -138,7 +143,7 @@
       float: left;
     }
     .header li a {
-      padding: 22px 30px;
+      padding: 23px 30px 24px 30px;
     }
     .header .menu {
       clear: none;
