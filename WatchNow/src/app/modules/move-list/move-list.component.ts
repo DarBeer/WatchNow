@@ -51,7 +51,7 @@ export class MoveListComponent implements OnInit {
  
   loadItems() {
     this.firestore.collection('films', ref => ref
-      .limit(8)
+      .limit(6)
       .orderBy('id', 'desc')
     ).snapshotChanges()
       .subscribe(response => {
@@ -88,7 +88,7 @@ export class MoveListComponent implements OnInit {
       .orderBy('id', 'desc')
       .startAt(this.get_prev_startAt())
       .endBefore(this.firstInResponse)
-      .limit(8)
+      .limit(6)
     ).get()
       .subscribe(response => {
         this.firstInResponse = response.docs[0];
@@ -116,7 +116,7 @@ export class MoveListComponent implements OnInit {
   nextPage() {
     this.disable_next = true;
     this.firestore.collection('films', ref => ref
-      .limit(8)
+      .limit(6)
       .orderBy('id', 'desc')
       .startAfter(this.lastInResponse)
     ).get()
