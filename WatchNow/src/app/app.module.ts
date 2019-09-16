@@ -29,6 +29,7 @@ import { UserDashBoardComponent } from './user-dash-board/user-dash-board.compon
 import { AuthenticationComponent } from './user-dash-board/authentication/authentication.component';
 import { SignUpComponent } from './modules/authentication/sign-up/sign-up.component';
 import { DashBoardComponent } from './user-dash-board/dash-board/dash-board.component';
+import { NgLocaleLocalization } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { DashBoardComponent } from './user-dash-board/dash-board/dash-board.comp
     HttpClientModule
   ],
   providers: [
+    NgLocaleLocalization,
     FilmService,
   ],
   bootstrap: [AppComponent]
