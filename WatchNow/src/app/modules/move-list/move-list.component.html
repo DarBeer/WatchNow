@@ -6,33 +6,7 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-md-2 col-sd-12" *ngFor="let item of tableData">
-        <div class="example-2 card">
-            <div class="wrapper">
-                <img style="height: 440px" src="{{item.cover}}" alt="" class="img-fluid">
-                <div class="header">
-                    <div class="date">
-                        <span class="day">12</span>
-                        <span class="month">Aug</span>
-                        <span class="year">2016</span>
-                    </div>
-                    <ul class="menu-content">
-                        <li>
-                        <a href="#" class="fa fa-bookmark-o"></a>
-                        </li>
-                        <li><a href="#" class="fa fa-heart-o"><span>18</span></a></li>
-                        <li><a href="#" class="fa fa-comment-o"><span>3</span></a></li>
-                    </ul>
-                </div>
-                <div class="data">
-                    <div class="content">
-                        <span class="author"></span>
-                        <h1 class="title"><a href="#">{{item.title}}</a></h1>
-                        <p class="text"></p>
-                        <a href="#" class="button">WATCH NOW</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="col-md-1 col-sd-12" *ngFor="let item of tableData">
+        <img style="height: 184px;" src="{{item.cover}}" alt="" class="img-fluid">
     </div>
 </div>
