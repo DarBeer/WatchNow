@@ -5,6 +5,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Veneer Three';
+  src: url('../../../assets/fonsts/VeneerThree.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  }
+
 @import url('https://fonts.googleapis.com/css?family=Oswald:700&display=swap&subset=cyrillic');
   
   a {
@@ -59,7 +66,7 @@
     font-size: 2em;
     padding: 10px 20px;
     text-decoration: none;
-    font-family: 'Veneer Regular';
+    font-family: 'Veneer Three';
   }
   
   /* menu */
