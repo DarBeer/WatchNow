@@ -3,9 +3,10 @@ import { Film } from '../../shared/film.model'
 import { FilmService } from 'src/app/shared/film.service';
 import { Observable } from 'rxjs';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { PaginationService } from 'src/app/shared/pagination.service';
+
 
 import * as _ from "lodash";
+
 
 @Component({
   selector: 'app-move-list',
@@ -52,7 +53,7 @@ export class MoveListComponent implements OnInit {
   loadItems() {
     this.firestore.collection('films', ref => ref
       .limit(6)
-      .orderBy('id', 'desc')
+      .orderBy('added_at', 'desc')
     ).snapshotChanges()
       .subscribe(response => {
         if (!response.length) {
@@ -85,7 +86,7 @@ export class MoveListComponent implements OnInit {
   prevPage() {
     this.disable_prev = true;
     this.firestore.collection('films', ref => ref
-      .orderBy('id', 'desc')
+      .orderBy('added_at', 'desc')
       .startAt(this.get_prev_startAt())
       .endBefore(this.firstInResponse)
       .limit(6)
@@ -117,7 +118,7 @@ export class MoveListComponent implements OnInit {
     this.disable_next = true;
     this.firestore.collection('films', ref => ref
       .limit(6)
-      .orderBy('id', 'desc')
+      .orderBy('added_at', 'desc')
       .startAfter(this.lastInResponse)
     ).get()
       .subscribe(response => {

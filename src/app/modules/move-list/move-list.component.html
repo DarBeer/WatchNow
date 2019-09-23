@@ -7,6 +7,6 @@
 </div>
 <div class="row">
     <div class="col-md-1 col-sd-12" *ngFor="let item of tableData">
-        <img style="height: 184px;" src="{{item.cover}}" alt="" class="img-fluid">
+        <a routerLink="/film/{{item.id}}"><img style="height: 184px;" src="{{item.cover}}" alt="" class="img-fluid"></a>
     </div>
 </div>

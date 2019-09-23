@@ -6,6 +6,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatVideoModule } from 'mat-video';
 import { HttpClientModule } from '@angular/common/http';
+import { SlickModule } from 'ngx-slick';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,9 +16,7 @@ import { FooterComponent } from './web/footer/footer.component';
 import { SearchComponent } from './web/header/search/search.component';
 import { HomeComponent } from './web/home/home.component';
 import { MoviesComponent } from './web/movies/movies.component';
-import { FilmComponent } from './web/Movies/film/film.component';
 import { environment } from 'src/environments/environment';
-import { CarouselComponent } from './modules/carousel/carousel.component';
 import { VideoPlayerComponent } from './modules/video-player/video-player.component';
 import { MoveListComponent } from './modules/move-list/move-list.component';
 import { FilmService } from './shared/film.service';
@@ -30,6 +29,9 @@ import { AuthenticationComponent } from './user-dash-board/authentication/authen
 import { SignUpComponent } from './modules/authentication/sign-up/sign-up.component';
 import { DashBoardComponent } from './user-dash-board/dash-board/dash-board.component';
 import { NgLocaleLocalization } from '@angular/common';
+import { ProfileComponent } from './user-dash-board/dash-board/profile/profile.component';
+import { FavoriteMoviesComponent } from './user-dash-board/dash-board/favorite-movies/favorite-movies.component';
+import { PageComponent } from './web/movies/page/page.component';
 
 @NgModule({
   declarations: [
@@ -40,8 +42,6 @@ import { NgLocaleLocalization } from '@angular/common';
     SearchComponent,
     HomeComponent,
     MoviesComponent,
-    FilmComponent,
-    CarouselComponent,
     VideoPlayerComponent,
     MoveListComponent,
     ScrollableDirective,
@@ -50,7 +50,10 @@ import { NgLocaleLocalization } from '@angular/common';
     UserDashBoardComponent,
     AuthenticationComponent,
     SignUpComponent,
-    DashBoardComponent
+    DashBoardComponent,
+    ProfileComponent,
+    FavoriteMoviesComponent,
+    PageComponent
   ],
   imports: [
     FormsModule,
@@ -61,7 +64,8 @@ import { NgLocaleLocalization } from '@angular/common';
     AngularFirestoreModule,
     BrowserAnimationsModule,
     MatVideoModule,
-    HttpClientModule
+    HttpClientModule,
+    SlickModule.forRoot()
   ],
   providers: [
     NgLocaleLocalization,
