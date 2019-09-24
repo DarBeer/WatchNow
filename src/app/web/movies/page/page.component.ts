@@ -3,8 +3,10 @@ import { Location } from '@angular/common';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Film } from 'src/app/shared/film.model';
 
-import { switchMap } from 'rxjs/operators';
+import * as _ from "lodash";
+import { switchMap, switchMapTo } from 'rxjs/operators';
 import { FilmService } from 'src/app/shared/film.service';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-page',
@@ -14,20 +16,39 @@ import { FilmService } from 'src/app/shared/film.service';
 export class PageComponent implements OnInit {
 
   private id: string;
-  film: any;
+  tableData: any[] = [];
 
   private errorMessage: string;
 
-  constructor(private service: FilmService, private route: ActivatedRoute, private location: Location) { }
+  constructor(private service: FilmService, private route: ActivatedRoute, private location: Location, private firestore: AngularFirestore) { }
 
   ngOnInit() {
     this.route.params.subscribe(
       params => {
-        this.id = params['id'];
-      },
-      error => this.errorMessage = error
-    );
-    this.service.getFilm(this.id);
-    this.film = this.service.item;
+        this.getFilm(params['id']);
+      }
+    )
   }
+
+  getFilm(id: string){
+    this.firestore.collection('films', ref => ref
+      .limit(6)
+      .where('id', '==', id)
+    ).snapshotChanges()
+      .subscribe(response => {
+        if (!response.length) {
+          console.log("No Data Available");
+          return false;
+        }
+ 
+        this.tableData = [];
+        for (let item of response) {
+          this.tableData.push(item.payload.doc.data());
+        }
+
+        console.log(this.tableData);
+      }, error => {
+      });
+  }
+
 }
