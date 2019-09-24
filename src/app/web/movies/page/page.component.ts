@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
+import { Film } from 'src/app/shared/film.model';
+
+import { switchMap } from 'rxjs/operators';
+import { FilmService } from 'src/app/shared/film.service';
 
 @Component({
   selector: 'app-page',
@@ -9,15 +13,21 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PageComponent implements OnInit {
 
-  
+  private id: string;
+  film: any;
 
-  constructor(private route: ActivatedRoute, private location: Location) { }
+  private errorMessage: string;
+
+  constructor(private service: FilmService, private route: ActivatedRoute, private location: Location) { }
 
   ngOnInit() {
-    this.getPath();
-  }
-
-  getPath() {
-    console.log(this.location.path());  
+    this.route.params.subscribe(
+      params => {
+        this.id = params['id'];
+      },
+      error => this.errorMessage = error
+    );
+    this.service.getFilm(this.id);
+    this.film = this.service.item;
   }
 }

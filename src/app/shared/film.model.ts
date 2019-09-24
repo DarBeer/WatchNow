@@ -1,7 +1,8 @@
 export class Film {
+    added_at: string;
     cover: string;
     description: string;
     id: string;
-    preview: string[];
+    kinopoisk_id: string;
     title: string;
 }
