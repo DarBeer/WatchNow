@@ -3,7 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: true,
+  firebaseConfig: {
+    apiKey: "AIzaSyBMAxN03q5eZwIzR-NGFlsZLuALdPMHgXk",
+    authDomain: "kinogo-scrapped.firebaseapp.com",
+    databaseURL: "https://kinogo-scrapped.firebaseio.com",
+    projectId: "kinogo-scrapped",
+    storageBucket: "kinogo-scrapped.appspot.com",
+    messagingSenderId: "877865721977",
+    appId: "1:877865721977:web:1e99630fe1ce63fcaaf4a8"
+}
 };
 
 /*
