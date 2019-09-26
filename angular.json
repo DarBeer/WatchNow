@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "WatchNow": {
+    "WatchNowProject": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/WatchNow",
+            "outputPath": "dist/WatchNowProject",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -77,18 +77,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "WatchNow:build"
+            "browserTarget": "WatchNowProject:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "WatchNow:build:production"
+              "browserTarget": "WatchNowProject:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "WatchNow:build"
+            "browserTarget": "WatchNowProject:build"
           }
         },
         "test": {
@@ -125,15 +125,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "WatchNow:serve"
+            "devServerTarget": "WatchNowProject:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "WatchNow:serve:production"
+              "devServerTarget": "WatchNowProject:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "WatchNow"
+  "defaultProject": "WatchNowProject"
 }

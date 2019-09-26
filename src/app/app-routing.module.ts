@@ -1,31 +1,22 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './web/home/home.component';
-import { MoviesComponent } from './web/movies/movies.component';
-import { UserDashBoardComponent } from './user-dash-board/user-dash-board.component';
-import { AuthenticationComponent } from './user-dash-board/authentication/authentication.component';
-import { LogInComponent } from './modules/authentication/log-in/log-in.component';
-import { SignUpComponent } from './modules/authentication/sign-up/sign-up.component';
-import { DashBoardComponent } from './user-dash-board/dash-board/dash-board.component';
-import { ProfileComponent } from './user-dash-board/dash-board/profile/profile.component';
-import { FavoriteMoviesComponent } from './user-dash-board/dash-board/favorite-movies/favorite-movies.component';
-import { PageComponent } from './web/movies/page/page.component';
+import {  NgModule }                  from '@angular/core';
+import {  Routes, 
+          RouterModule, 
+        }                             from '@angular/router';
+
+import {  UserComponent   }           from './user/user.component';
+import {  HomeComponent   }           from './user/home/home.component';
+import {  ListOfGenresComponent   }   from './user/list-of-genres/list-of-genres.component';
+import {  ListOfFilmsComponent  }     from './user/list-of-films/list-of-films.component';
+import {  FilmComponent   }           from './user/list-of-films/film/film.component';
 
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'movies', component: MoviesComponent },
-  { path: 'film/:id', component: PageComponent },
-  { path: 'profile', component: UserDashBoardComponent, children: [
-    { path: ':id', component: DashBoardComponent, children: [
-      { path: '', component: ProfileComponent },
-      { path: 'favorite', component: FavoriteMoviesComponent }
-    ]},
-    { path: 'authentication', component: AuthenticationComponent, children: [
-      { path: 'sign-in', component: LogInComponent },
-      { path: 'sign-up', component: SignUpComponent }
-    ]}
+  { path: '', component: UserComponent, children: [
+    { path: 'home', component: HomeComponent },
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: 'list-of-genres', component: ListOfGenresComponent },
+    { path: 'list-of-films', component: ListOfFilmsComponent },
+    { path: 'films/:id', component: FilmComponent }
   ]}
 ];
 

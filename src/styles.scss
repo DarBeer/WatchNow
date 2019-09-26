@@ -1,5 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~@angular/material/prebuilt-themes/indigo-pink.css';
 
 @import url('https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700&display=swap&subset=cyrillic');
 
@@ -15,7 +14,7 @@ body {
 
 .scrollbar-primary::-webkit-scrollbar {
     width: 8px;
-    background-color: #232323; 
+    background-color: #1a1a1a; 
 }
     
 .scrollbar-primary::-webkit-scrollbar-thumb {
