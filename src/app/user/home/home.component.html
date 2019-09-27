@@ -1,5 +1,5 @@
 <div class="row">
     <div class="col" *ngFor="let item of films">
-        {{item.title}}
+            <app-film-details [film]='item'></app-film-details>
     </div>
 </div>

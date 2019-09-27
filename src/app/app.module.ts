@@ -22,6 +22,7 @@ import { ListOfFilmsComponent }   from './user/list-of-films/list-of-films.compo
 import { FilmComponent }          from './user/list-of-films/film/film.component';
 import { PreloaderComponent } from './shared/modules/preloader/preloader.component';
 import { environment } from 'src/environments/environment';
+import { FilmDetailsComponent } from './shared/modules/film-details/film-details.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { environment } from 'src/environments/environment';
     ListOfGenresComponent,
     ListOfFilmsComponent,
     FilmComponent,
-    PreloaderComponent
+    PreloaderComponent,
+    FilmDetailsComponent
   ],
   imports: [
     MDBBootstrapModule.forRoot(),
