@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 
+  loading: boolean = false;
+
   public pages: string[][] = [
     ['HOME', '/home'],
     ['GENRES', '/list-of-genres']

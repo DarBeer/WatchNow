@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit }  from '@angular/core';
+import { LoaderService }      from '../../service/loader.service';
+import { Subscription }       from "rxjs";
+import { debounceTime }       from 'rxjs/operators';
 
 @Component({
   selector: 'app-preloader',
@@ -7,9 +10,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PreloaderComponent implements OnInit {
 
-  constructor() { }
+  loading: boolean = false;
+  loadingSubscription: Subscription;
+
+  constructor(private loaderService: LoaderService) { }
 
   ngOnInit() {
+    
+  }
+
+  ngAfterViewInit() {
+    this.loadingSubscription = this.loaderService.loadingStatus.pipe(
+      debounceTime(200)
+    ).subscribe((value) => {
+      this.loading = value;
+    });
+  }
+
+  ngOnDestroy() {
+    this.loadingSubscription.unsubscribe();
   }
 
 }
