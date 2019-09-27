@@ -46,3 +46,4 @@ testem.log
 Thumbs.db
 
 # FireStore API key
+src/environments/environment.ts
