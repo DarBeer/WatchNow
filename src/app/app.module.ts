@@ -8,6 +8,9 @@ import { AngularFireModule }      from '@angular/fire';
 import { AngularFirestoreModule,
          FirestoreSettingsToken } from '@angular/fire/firestore';
 
+// Kyes
+import { firebaseKey }            from './shared/keys/firebase.key';
+
 // Routing
 import { AppRoutingModule }       from './app-routing.module';
 
@@ -20,9 +23,9 @@ import { SeachModuleComponent }   from './user/seach-module/seach-module.compone
 import { ListOfGenresComponent }  from './user/list-of-genres/list-of-genres.component';
 import { ListOfFilmsComponent }   from './user/list-of-films/list-of-films.component';
 import { FilmComponent }          from './user/list-of-films/film/film.component';
-import { PreloaderComponent } from './shared/modules/preloader/preloader.component';
-import { environment } from 'src/environments/environment';
-import { FilmDetailsComponent } from './shared/modules/film-details/film-details.component';
+import { PreloaderComponent }     from './shared/modules/preloader/preloader.component';
+import { FilmDetailsComponent }   from './shared/modules/film-details/film-details.component';
+
 
 @NgModule({
   declarations: [
@@ -39,7 +42,7 @@ import { FilmDetailsComponent } from './shared/modules/film-details/film-details
   ],
   imports: [
     MDBBootstrapModule.forRoot(),
-    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireModule.initializeApp(firebaseKey.firebaseConfig),
     
     
     AngularFirestoreModule,
