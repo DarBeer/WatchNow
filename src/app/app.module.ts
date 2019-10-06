@@ -1,73 +1,57 @@
-// Modules
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { MDBBootstrapModule } from 'angular-bootstrap-md';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
-// Firebase Modules
+import { firebaseConfig } from 'src/app/shared/config/firebase.config';
 import { AngularFireModule } from '@angular/fire';
-import {
-  AngularFirestoreModule,
-  FirestoreSettingsToken
-} from '@angular/fire/firestore';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
-// Kyes
-import { firebaseKey } from './shared/keys/firebase.key';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
-// Routing
 import { AppRoutingModule } from './app-routing.module';
-
-// Interceptors
-import { LoadingScreenInterceptor } from './shared/interceptors/loading.interceptor';
-
-// Pages
 import { AppComponent } from './app.component';
+import { WebComponent } from './web/web.component';
+import { HomeComponent } from './web/home/home.component';
+import { FilmsComponent } from './web/films/films.component';
+import { FilmComponent } from './web/films/film/film.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 import { UserComponent } from './user/user.component';
-import { AdminComponent } from './admin/admin.component';
-import { HomeComponent } from './user/home/home.component';
-import { SearchModuleComponent } from './user/search-module/search-module.component';
-import { ListOfGenresComponent } from './user/list-of-genres/list-of-genres.component';
-import { ListOfFilmsComponent } from './user/list-of-films/list-of-films.component';
-import { FilmComponent } from './user/list-of-films/film/film.component';
-import { PreloaderComponent } from './shared/modules/preloader/preloader.component';
-import { FilmDetailsComponent } from './shared/modules/film-details/film-details.component';
-
-
+import { EditComponent } from './user/edit/edit.component';
+import { FavoriteComponent } from './user/favorite/favorite.component';
+import { ProfileComponent } from './user/profile/profile.component';
+import { UserAuthorizateComponent } from './user-authorizate/user-authorizate.component';
+import { GenresComponent } from './web/genres/genres.component';
+import { ListFilmDetailsComponent } from './shared/module/list-film-details/list-film-details.component';
+import { FilmDetailsComponent } from './shared/module/list-film-details/film-details/film-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserComponent,
-    AdminComponent,
+    WebComponent,
     HomeComponent,
-    SearchModuleComponent,
-    ListOfGenresComponent,
-    ListOfFilmsComponent,
+    FilmsComponent,
     FilmComponent,
-    PreloaderComponent,
+    NotFoundComponent,
+    UserComponent,
+    EditComponent,
+    FavoriteComponent,
+    ProfileComponent,
+    UserAuthorizateComponent,
+    GenresComponent,
+    ListFilmDetailsComponent,
     FilmDetailsComponent
   ],
   imports: [
-    // Animation
-    MatProgressSpinnerModule,
-    AngularFirestoreModule,
+    // Angular FireBase
+    AngularFireModule.initializeApp(firebaseConfig.firebase),
+    AngularFirestoreModule.enablePersistence(),
 
+    //Material Bootstrap
     MDBBootstrapModule.forRoot(),
-    AngularFireModule.initializeApp(firebaseKey.firebaseConfig),
-    BrowserAnimationsModule,
 
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: LoadingScreenInterceptor,
-      multi: true
-    }
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

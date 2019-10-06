@@ -1,21 +1,24 @@
-import { Injectable }                                   from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
-import { Film }                                         from '../classes/film/film';
+import { Injectable } from '@angular/core';
+import { AngularFirestoreDocument, AngularFirestore, AngularFirestoreCollection, DocumentChangeAction, DocumentSnapshot, DocumentData, QuerySnapshot } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { Film } from "../data/Film";
+import { firestore } from 'firebase';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FilmService {
 
-  private databasePath = '/films';
+  private itemCollection: AngularFirestoreCollection<Film>;
 
-  filmRef: AngularFirestoreCollection<Film> = null;
-
-  constructor(private database: AngularFirestore) {
-    this.filmRef = database.collection(this.databasePath, ref => ref.limit(3).orderBy('added_at', 'asc'));
+  constructor(private angularFirestore: AngularFirestore) {
+    
   }
 
-  getList() {
-    return this.filmRef;
-  }
+  public getFilms() : Observable<Film[]> {
+    this.itemCollection = this.angularFirestore.collection<Film>('films', res => res.limit(9).orderBy('added_at', 'desc'));
+    return this.itemCollection.valueChanges();
+  } 
+
 }

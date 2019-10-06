@@ -1,23 +1,34 @@
-import {  NgModule }                  from '@angular/core';
-import {  Routes, 
-          RouterModule, 
-        }                             from '@angular/router';
-
-import {  UserComponent   }           from './user/user.component';
-import {  HomeComponent   }           from './user/home/home.component';
-import {  ListOfGenresComponent   }   from './user/list-of-genres/list-of-genres.component';
-import {  ListOfFilmsComponent  }     from './user/list-of-films/list-of-films.component';
-import {  FilmComponent   }           from './user/list-of-films/film/film.component';
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { WebComponent } from './web/web.component';
+import { HomeComponent } from './web/home/home.component';
+import { FilmsComponent } from './web/films/films.component';
+import { FilmComponent } from './web/films/film/film.component';
+import { UserComponent } from './user/user.component';
+import { ProfileComponent } from './user/profile/profile.component';
+import { FavoriteComponent } from './user/favorite/favorite.component';
+import { EditComponent } from './user/edit/edit.component';
+import { UserAuthorizateComponent } from './user-authorizate/user-authorizate.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { GenresComponent } from './web/genres/genres.component';
 
 
 const routes: Routes = [
-  { path: '', component: UserComponent, children: [
+  { path: '', component: WebComponent, children: [
     { path: 'home', component: HomeComponent },
     { path: '', redirectTo: 'home', pathMatch: 'full' },
-    { path: 'list-of-genres', component: ListOfGenresComponent },
-    { path: 'list-of-films', component: ListOfFilmsComponent },
-    { path: 'films/:id', component: FilmComponent }
-  ]}
+    { path: 'films', component: FilmsComponent },
+    { path: 'film/:id', component: FilmComponent },
+    { path: 'genres', component: GenresComponent }
+  ]},
+  { path: 'user/:id', component: UserComponent, children: [
+    { path: '', component: ProfileComponent },
+    { path: 'likes', component: FavoriteComponent },
+    { path: 'edit', component: EditComponent }
+  ]},
+  { path: 'auth', component: UserAuthorizateComponent },
+  { path: 'not-found', component: NotFoundComponent },
+  { path: '**', redirectTo: 'not-found', pathMatch: 'full' },
 ];
 
 @NgModule({

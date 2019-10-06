@@ -1,0 +1,6 @@
+<div class="row">
+  <div class="col-md-4 col-sm-12 mt-2 mb-2" *ngFor="let item of films">
+      {{item?.metadate.imdb_rating}}
+    <app-film-details [film]='item'></app-film-details>
+  </div>
+</div>

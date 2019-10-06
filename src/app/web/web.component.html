@@ -1,0 +1,37 @@
+<!--Header-->
+<header class="header">
+    <a routerLink="home" class="logo"><i class="fas fa-ticket-alt"></i> Watch Now</a>
+    <input class="menu-btn" type="checkbox" id="menu-btn" />
+    <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+    <ul class="menu">
+        <!-- <li class="search-li">
+            <a>
+                <app-search></app-search>
+            </a>
+        </li> -->
+        <li *ngFor="let page of pages"><a routerLink="{{page[1]}}" routerLinkActive="navigate-active">{{page[0]}}</a></li>
+        
+    </ul>
+</header>
+
+<!--Main content-->
+<main class="scrollbar scrollbar-primary">
+    <div class="container text-justify">
+        <router-outlet></router-outlet>
+    </div>
+</main>
+
+<!--Footer-->
+<footer>
+    <!-- Footer -->
+    <div class="page-footer font-small">
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3"><i class="far fa-copyright"></i> {{copyright | date:'yyyy'}} Copyright:
+            <a routerLink="home">Watch Now</a>
+        </div>
+        <!-- Copyright -->
+          
+    </div>
+    <!-- Footer -->
+</footer>

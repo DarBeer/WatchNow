@@ -44,7 +44,4 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
-
-# FireStore API key
-src/app/shared/keys/firebase.key.ts
-src/assets/img/164654504-princess-mononoke-wallpapers.png
+src/shared/config/
