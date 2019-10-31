@@ -1,37 +1,55 @@
+<!--Modal-->
+<div mdbModal #basicModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal.hide()">
+          <span aria-hidden="true text-white">×</span>
+        </button>
+        <h4 id="myModalLabel text-white">Search moves</h4>
+      </div>
+      <div class="modal-body">
+        <app-search></app-search>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!--Header-->
 <header class="header">
-    <a routerLink="home" class="logo"><i class="fas fa-ticket-alt"></i> Watch Now</a>
-    <input class="menu-btn" type="checkbox" id="menu-btn" />
-    <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-    <ul class="menu">
-        <!-- <li class="search-li">
-            <a>
-                <app-search></app-search>
-            </a>
-        </li> -->
-        <li *ngFor="let page of pages"><a routerLink="{{page[1]}}" routerLinkActive="navigate-active">{{page[0]}}</a></li>
-        
-    </ul>
+  <a routerLink="/home" class="logo">Watch Now</a>
+  <input class="menu-btn" type="checkbox" id="menu-btn" />
+  <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+  <ul class="menu">
+    <li>
+      <a (click)="basicModal.show()"><i class="fas fa-search"></i></a>
+
+    </li>
+    <li *ngFor="let page of pages"><a routerLink="{{page[1]}}" routerLinkActive="navigate-active">{{page[0]}}</a></li>
+
+  </ul>
 </header>
 
 <!--Main content-->
-<main class="scrollbar scrollbar-primary">
-    <div class="container text-justify">
-        <router-outlet></router-outlet>
-    </div>
+<main>
+  <div class="text-justify">
+    <router-outlet></router-outlet>
+  </div>
 </main>
 
 <!--Footer-->
 <footer>
-    <!-- Footer -->
-    <div class="page-footer font-small">
+  <!-- Footer -->
+  <div class="page-footer font-small">
 
-        <!-- Copyright -->
-        <div class="footer-copyright text-center py-3"><i class="far fa-copyright"></i> {{copyright | date:'yyyy'}} Copyright:
-            <a routerLink="home">Watch Now</a>
-        </div>
-        <!-- Copyright -->
-          
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3"><i class="far fa-copyright"></i> {{copyright | date:'yyyy'}}
+      Copyright:
+      <a routerLink="home">Watch Now</a>
     </div>
-    <!-- Footer -->
+    <!-- Copyright -->
+
+  </div>
+  <!-- Footer -->
 </footer>

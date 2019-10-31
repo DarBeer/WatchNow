@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FilmDetailsComponent } from './film-details.component';
+import { ScrollLoaderComponent } from './scroll-loader.component';
 
-describe('FilmDetailsComponent', () => {
-  let component: FilmDetailsComponent;
-  let fixture: ComponentFixture<FilmDetailsComponent>;
+describe('ScrollLoaderComponent', () => {
+  let component: ScrollLoaderComponent;
+  let fixture: ComponentFixture<ScrollLoaderComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FilmDetailsComponent ]
+      declarations: [ ScrollLoaderComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FilmDetailsComponent);
+    fixture = TestBed.createComponent(ScrollLoaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

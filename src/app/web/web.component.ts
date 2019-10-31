@@ -13,8 +13,8 @@ export class WebComponent implements OnInit {
 
   public pages: string[][] = [
     ['HOME', '/home'],
-    ['FILMS', '/films'],
-    ['GENRES', '/genres']
+    //['FILMS', '/films'],
+    //['GENRES', '/genres']
   ];
 
   constructor() {

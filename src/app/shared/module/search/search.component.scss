@@ -1,0 +1,33 @@
+.find-form {
+  input {
+    background-color: #272727;
+    border: none;
+    padding: .5rem .5rem;
+    color: white;
+    width: 100%;
+  }
+
+  button {
+    background-color: rgb(50, 81, 167);
+    border: none;
+    padding: .5rem .9rem;
+    color: white;
+    width: 100%;
+  }
+
+  button:hover {
+    background-color: rgb(43, 72, 151);
+  }
+}
+
+@media (min-width: 48em) {
+  .find-form {
+    input {
+      width: 90%;
+    }
+
+    button {
+      width: 10%;
+    }
+  }
+}

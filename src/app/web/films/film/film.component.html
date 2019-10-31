@@ -1,1 +1,40 @@
-<p>film works!</p>
+<div *ngIf="film">
+
+  <div class="video-container mb-2">
+    <video controls>
+      <source src="https://nkoehler.github.io/mat-video/assets/NASA.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="container mt-2 mb-2">
+
+    <!-- First row -->
+    <div class="row">
+
+      <div class="col-md-4 col-sm-12">
+        <img class="img-fluid" src="{{film.cover}}" alt="{{film.title}}">
+      </div>
+
+      <div class="col-md-8 col-sm-12">
+
+          <div class="row">
+
+              <div class="col-sm-12 col-md-12">
+                <h3 class="text-center text-md-left">{{film.title}}</h3>
+              </div>
+
+          </div>
+
+          <div class="row">
+            <div class="col-sm-12 col-md-12 text-justify">
+              <p>{{film.description}}</p>
+            </div>
+          </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col">
+    <div class="find-form">
+      <input type="text" [formControl]="title">
+      <button (click)="onClickSerchButton()">Find</button>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div *ngIf="films" class="col">
+    <div *ngFor="let item of films" class="row mt-2">
+      <div class="col-sm-1 col-md-1">
+        <img class="img-fluid" src="{{item.cover}}" alt="">
+      </div>
+      <div class="col-sm-11 col-md-11">
+        <h3>{{item.title}}</h3>
+        <p class="text-truncate">{{item.description}}</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,7 @@
 import { Human } from './human';
+import { firestore } from 'firebase';
 
-export interface Metadata {
+export class Metadata {
     kinopoisk_rating: string[];
     year: number;
     duration: string[];
@@ -8,6 +9,6 @@ export interface Metadata {
     actors: Human[];
     countries: string[];
     dubbing: any[];
-    release_date: string;
+    release_date: firestore.Timestamp;
     producers: Human[];
 }

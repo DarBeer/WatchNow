@@ -1,204 +1,221 @@
 @font-face {
-    font-family: 'Veneer Regular';
-    src: url('../../assets/fonsts/Veneer.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
-  
-@font-face {
-    font-family: 'Veneer Three';
-    src: url('../../assets/fonsts/VeneerThree.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'Veneer Regular';
+  src: url('../../assets/fonsts/Veneer.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
-  
+
+@font-face {
+  font-family: 'Veneer Three';
+  src: url('../../assets/fonsts/VeneerThree.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @import url('https://fonts.googleapis.com/css?family=Oswald:700&display=swap&subset=cyrillic');
-    
+
 a {
-    color: #cdcdcd !important;
+  color: #cdcdcd !important;
 }
 
 /* header */
-    
+
 .header {
-    background-color: #1a1a1a;
-    box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 20;
+  background-color: #1a1a1a;
+  box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, .1);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 20;
 }
-    
+
 .header ul {
-    font-family: 'Oswald', sans-serif;
-    font-weight: 700;
-    font-size: 0.9rem;
-    letter-spacing: 0.1rem; 
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    overflow: hidden;
-    background-color: #1a1a1a;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #1a1a1a;
 }
+
 .header li a {
-    display: block;
-    padding: 20px 20px;
-    text-decoration: none;
+  display: block;
+  padding: 20px 20px;
+  text-decoration: none;
 }
-  
+
 .header .search-li a {
-    background-color: #1a1a1a !important;
-    padding-bottom: 0 !important;
+  background-color: #1a1a1a !important;
+  padding-bottom: 0 !important;
 }
-    
+
 .header .search-li a:hover {
-    background-color: #1a1a1a !important;
+  background-color: #1a1a1a !important;
 }
-    
+
 .header li a:hover,
 .header .menu-btn:hover {
-    background-color:  rgb(43, 72, 151);
+  background-color: rgb(43, 72, 151);
 }
-    
+
 .header .logo {
-    display: block;
-    float: left;
-    font-size: 2em;
-    padding: 10px 20px;
-    text-decoration: none;
-    font-family: 'Veneer Three';
+  display: block;
+  float: left;
+  font-size: 2em;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-family: 'Veneer Three';
 }
-    
+
 /* menu */
-    
+
 .header .menu {
-    clear: both;
-    max-height: 0;
-    transition: max-height .2s ease-out;
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
 }
-    
+
 /* menu icon */
 
 .header .menu-icon {
-    cursor: pointer;
-    display: inline-block;
-    float: right;
-    padding: 28px 20px;
-    position: relative;
-    user-select: none;
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
 }
-    
+
 .header .menu-icon .navicon {
-    background: #cdcdcd;
-    display: block;
-    height: 2px;
-    position: relative;
-    transition: background .2s ease-out;
-    width: 18px;
+  background: #cdcdcd;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
 }
-    
+
 .header .menu-icon .navicon:before,
 .header .menu-icon .navicon:after {
-    background: #cdcdcd;
-    content: '';
-    display: block;
-    height: 100%;
-    position: absolute;
-    transition: all .2s ease-out;
-    width: 100%;
+  background: #cdcdcd;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
 }
-    
+
 .header .menu-icon .navicon:before {
-    top: 5px;
+  top: 5px;
 }
 
 .header .menu-icon .navicon:after {
-    top: -5px;
+  top: -5px;
 }
-    
+
 /* menu btn */
 
 .header .menu-btn {
-    display: none;
+  display: none;
 }
 
-.header .menu-btn:checked ~ .menu {
-    max-height: 100vh;
-}
-    
-.header .menu-btn:checked ~ .menu-icon .navicon {
-    background: transparent;
+.header .menu-btn:checked~.menu {
+  max-height: 100vh;
 }
 
-.header .menu-btn:checked ~ .menu-icon .navicon:before {
-    transform: rotate(-45deg);
+.header .menu-btn:checked~.menu-icon .navicon {
+  background: transparent;
 }
-    
-.header .menu-btn:checked ~ .menu-icon .navicon:after {
-    transform: rotate(45deg);
+
+.header .menu-btn:checked~.menu-icon .navicon:before {
+  transform: rotate(-45deg);
 }
-    
-.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
-.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
-    top: 0;
+
+.header .menu-btn:checked~.menu-icon .navicon:after {
+  transform: rotate(45deg);
 }
-    
-    /* 48em = 768px */
-    
+
+.header .menu-btn:checked~.menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked~.menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+/* 48em = 768px */
+
 @media (min-width: 48em) {
 
-    .header li {
-        float: left;
-    }
+  .header li {
+    float: left;
+  }
 
-    .header li a {
-        padding: 23px 30px 24px 30px;
-    }
+  .header li a {
+    padding: 23px 30px 24px 30px;
+  }
 
-    .header .menu {
-        clear: none;
-        float: right;
-        padding: 0 20px;
-        max-height: none;
-    }
+  .header .menu {
+    clear: none;
+    float: right;
+    padding: 0 20px;
+    max-height: none;
+  }
 
-    .header .menu-icon {
-        display: none;
-    }
+  .header .menu-icon {
+    display: none;
+  }
 
 }
-    
-  
+
+
 .navigate-active {
-    background-color: rgb(50, 81, 167);
+  background-color: rgb(50, 81, 167);
 }
 
 // Scroll bar
 .scrollbar {
-    overflow-y: scroll;
+  overflow-y: scroll;
 }
 
 .scrollbar-primary::-webkit-scrollbar {
-    width: 8px;
-    background-color: #232323; 
+  width: 8px;
+  background-color: #232323;
 }
-    
+
 .scrollbar-primary::-webkit-scrollbar-thumb {
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
-    background-color: rgb(50, 81, 167);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  background-color: rgb(50, 81, 167);
 }
 
 // Contant
 
 main {
-    padding: 7px 0;
-    margin-top: 68px;
-    height: calc(100vh - 121px);
-    margin-bottom: 53px;
+  margin-top: 68px;
+  height: calc(100vh - 121px);
+  margin-bottom: 53px;
 }
 
 footer {
-    margin-top: -53px;
-    background-color: #1a1a1a;
+  margin-top: -53px;
+  background-color: #1a1a1a;
+}
+
+
+
+.modal-content {
+  background-color: #1a1a1a;
+}
+
+.modal-header {
+  border-bottom: 1px solid #111111;
+}
+
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 90vw;
+    margin: 1.75rem auto;
+  }
 }
 

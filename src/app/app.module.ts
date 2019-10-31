@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 
 import { firebaseConfig } from 'src/app/shared/config/firebase.config';
@@ -6,6 +7,9 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatVideoModule } from 'mat-video';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,7 +25,11 @@ import { ProfileComponent } from './user/profile/profile.component';
 import { UserAuthorizateComponent } from './user-authorizate/user-authorizate.component';
 import { GenresComponent } from './web/genres/genres.component';
 import { ListFilmDetailsComponent } from './shared/module/list-film-details/list-film-details.component';
-import { FilmDetailsComponent } from './shared/module/list-film-details/film-details/film-details.component';
+import { SearchComponent } from './shared/module/search/search.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { LoaderComponent } from './shared/module/loader/loader.component';
+import { SroallableDirective } from './shared/derective/sroallable.directive';
+import { ScrollLoaderComponent } from './shared/module/scroll-loader/scroll-loader.component';
 
 @NgModule({
   declarations: [
@@ -38,17 +46,27 @@ import { FilmDetailsComponent } from './shared/module/list-film-details/film-det
     UserAuthorizateComponent,
     GenresComponent,
     ListFilmDetailsComponent,
-    FilmDetailsComponent
+    SearchComponent,
+    LoaderComponent,
+    SroallableDirective,
+    ScrollLoaderComponent,
   ],
   imports: [
+    
     // Angular FireBase
     AngularFireModule.initializeApp(firebaseConfig.firebase),
     AngularFirestoreModule.enablePersistence(),
 
     //Material Bootstrap
     MDBBootstrapModule.forRoot(),
+    //MDBBootstrapModulesPro.forRoot(),
+
+    BrowserAnimationsModule,
+    MatVideoModule,
 
     BrowserModule,
+    HttpClientModule,
+    ReactiveFormsModule,
     AppRoutingModule
   ],
   providers: [],

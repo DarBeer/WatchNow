@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestoreDocument, AngularFirestore, AngularFirestoreCollection, DocumentChangeAction, DocumentSnapshot, DocumentData, QuerySnapshot } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Film } from "../data/Film";
+import { Film } from "../data/film";
 import { firestore } from 'firebase';
 
 @Injectable({
@@ -10,15 +10,24 @@ import { firestore } from 'firebase';
 })
 export class FilmService {
 
+  public loadDone
+
   private itemCollection: AngularFirestoreCollection<Film>;
 
   constructor(private angularFirestore: AngularFirestore) {
     
   }
 
-  public getFilms() : Observable<Film[]> {
-    this.itemCollection = this.angularFirestore.collection<Film>('films', res => res.limit(9).orderBy('added_at', 'desc'));
-    return this.itemCollection.valueChanges();
-  } 
+  public getFilms(num: number) : Observable<Film[]> {
+    return this.angularFirestore.collection<Film>('films', res => res.limit(num).orderBy('metadata.release_date', 'desc')).valueChanges();
+  }
+  
+  public serchFilmsByTitle(title: string) : Observable<Film[]> {
+    return this.angularFirestore.collection<Film>('films', res => res.where('title', '==', title).orderBy('title')).valueChanges();
+  }
+
+  public getFilm(id: number) : Observable<Film> {
+    return this.angularFirestore.doc<Film>('films/' + id).valueChanges();
+  }
 
 }

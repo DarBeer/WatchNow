@@ -18,7 +18,6 @@ const routes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'films', component: FilmsComponent },
-    { path: 'film/:id', component: FilmComponent },
     { path: 'genres', component: GenresComponent }
   ]},
   { path: 'user/:id', component: UserComponent, children: [
@@ -28,6 +27,7 @@ const routes: Routes = [
   ]},
   { path: 'auth', component: UserAuthorizateComponent },
   { path: 'not-found', component: NotFoundComponent },
+  { path: 'film/:id', component: FilmComponent },
   { path: '**', redirectTo: 'not-found', pathMatch: 'full' },
 ];
 

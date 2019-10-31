@@ -1,24 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700&display=swap&subset=cyrillic');
-
-@import '~@angular/material/prebuilt-themes/indigo-pink.css';
-
-body {
-  font-family: 'Oswald', sans-serif;
-  background-color: #232323;
-  color: #cdcdcd;
-}
-
-input, textarea, button {outline: none;}
-
-/* Preloader */
-/* loader */
 #cube-loader {
   align-items: center;
   display: flex;
-  height: 100%;
   width: 100%;
-  position: fixed;
+  position: relative;
+  margin-bottom: 10px;
 
   & .caption {
     margin: 0 auto;
@@ -76,26 +61,5 @@ input, textarea, button {outline: none;}
     & .loader-4:before {
       animation-delay: 1.04s;
     }
-  }
-}
-
-@keyframes cube-loader {
-
-  0%,
-  10% {
-    transform: perspective(136px) rotateX(-180deg);
-    opacity: 0;
-  }
-
-  25%,
-  75% {
-    transform: perspective(136px) rotateX(0deg);
-    opacity: 1;
-  }
-
-  90%,
-  100% {
-    transform: perspective(136px) rotateY(180deg);
-    opacity: 0;
   }
 }

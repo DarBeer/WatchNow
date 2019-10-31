@@ -1,1 +1,26 @@
-<p>list-film-details works!</p>
+<div scrollable (scrollPosition)="scrollHandler($event)" class="scrollbar scrollbar-primary">
+  <div class="container">
+    <div *ngIf="!films">
+      <app-loader></app-loader>
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-sm-12 mt-2 mb-2" *ngFor="let item of films">
+        <div routerLink="/film/{{item.id}}" *ngIf="item">
+          <div class="holder">
+            <img class="img-fluid" src="{{item.cover}}">
+            <div class="block">
+              <h3 class="text-truncate">{{item.title}}</h3>
+              <p class="text-truncate">{{item.description}}</p>
+              <p class="text-right date-font">{{item.metadata.release_date.toDate() | date: 'dd.MM.yyyy'}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" *ngIf="films">
+      <div class="col">
+        <app-scroll-loader></app-scroll-loader>
+      </div>
+    </div>
+  </div>
+</div>
